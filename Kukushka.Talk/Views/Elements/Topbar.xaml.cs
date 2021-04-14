@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kukushka.Talk.Views
+namespace Kukushka.Talk.Views.Elements
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для Topbar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Topbar : UserControl
     {
-        public MainWindow()
+        public Topbar()
         {
             InitializeComponent();
         }
