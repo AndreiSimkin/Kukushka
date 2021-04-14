@@ -37,8 +37,8 @@
                 <ColumnDefinition Width="1"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-            <el:Users Grid.Column="0"/>
-            <GridSplitter Grid.Column="1"/>
+            <el:Users Grid.ColumnSpan="2" Grid.Column="0"/>
+            <GridSplitter Focusable="False" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="Transparent" Margin="-1,0,0,0" />
             <el:Chat Grid.Column="2"/>
         </Grid>
     </Grid>
