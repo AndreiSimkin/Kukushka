@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kukushka.Talk.Views.Elements
+namespace Kukushka.Talk.Views.Main.Panles
 {
     /// <summary>
     /// Логика взаимодействия для Users.xaml

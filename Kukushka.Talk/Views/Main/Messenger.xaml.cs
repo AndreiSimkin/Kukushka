@@ -12,15 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
-namespace Kukushka.Talk.Views
+namespace Kukushka.Talk.Views.Main
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Messanger : Window
+    public partial class Messenger : Window
     {
-        public Messanger()
+        public Messenger()
         {
             InitializeComponent();
         }

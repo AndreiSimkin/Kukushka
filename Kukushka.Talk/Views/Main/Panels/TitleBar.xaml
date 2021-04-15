@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Kukushka.Talk.Views.Main.Panles.TitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:vm="clr-namespace:Kukushka.Talk.ViewModels.Main.Panels"
+             xmlns:local="clr-namespace:Kukushka.Talk.Views.Main.Panles"
+             xmlns:el="clr-namespace:Kukushka.Talk.Views.Elements"
+             mc:Ignorable="d" 
+             Name="TitleBarPanel"
+             d:DesignHeight="20"
+             d:DesignWidth="800" >
+    <UserControl.DataContext>
+        <vm:TitleBarViewModel  />
+    </UserControl.DataContext>
+    <Grid Background="#292929">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Margin="-3" Source="{Binding Source={StaticResource Logo}}"/>
+            <TextBlock FontFamily="Arial Rounded MT Bold" FontSize="18" Text="{Binding Text, ElementName=TitleBarPanel}" Margin="1,-1" Foreground="#df0917"/>
+        </StackPanel>
+        <StackPanel WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Right" Orientation="Horizontal">
+            <el:Button ButtonIconStroke="#606060"
+                       MouseOverButtonIconStroke="#dddddd"
+                       EnableRippleEffect="False"
+                       Foreground="AliceBlue"
+                       MouseOverBackground="#11FFFFFF"
+                       Command="{Binding DataContext.WindowStateChangedCommand, ElementName=TitleBarPanel}"
+                       Width="20" Cursor="Hand">
+                <el:Button.CommandParameter>
+                    <WindowState>Minimized</WindowState>
+                </el:Button.CommandParameter>
+                <Path StrokeThickness="2" Style="{StaticResource ButtonIcon}" Cursor="Hand">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint="0,7" EndPoint="8,7"/>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </el:Button>
+            <el:Button  ButtonIconStroke="#606060" 
+                MouseOverButtonIconStroke="#dddddd" 
+                EnableRippleEffect="False" 
+                Foreground="AliceBlue" 
+                MouseOverBackground="#11FFFFFF" 
+                Command="{Binding DataContext.WindowStateChangedCommand, ElementName=TitleBarPanel}"
+                Width="20" Cursor="Hand" >
+                <el:Button.CommandParameter>
+                    <WindowState>Maximized</WindowState>
+                </el:Button.CommandParameter>
+                <Grid>
+                    <Path  StrokeThickness="2"  RenderOptions.EdgeMode="Aliased" >
+                        <Path.Data>
+                            <RectangleGeometry Rect="2,1,8,7"/>
+                        </Path.Data>
+                        <Path.Style>
+                            <Style TargetType="Path" BasedOn="{StaticResource ButtonIcon}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowState}" Value="Maximized">
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                    <Path StrokeThickness="2" RenderOptions.EdgeMode="Aliased" Cursor="Hand" >
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="2,1" EndPoint="12,1"/>
+                                <LineGeometry StartPoint="11,0" EndPoint="11,9"/>
+                                <RectangleGeometry Rect="2,4,6,5"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                        <Path.Style>
+                            <Style TargetType="Path" BasedOn="{StaticResource ButtonIcon}">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowState}" Value="Maximized">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                </Grid>
+            </el:Button>
+            <el:Button ButtonIconStroke="#606060"
+                MouseOverButtonIconStroke="#FFFFFF"
+                EnableRippleEffect="False" 
+                Foreground="AliceBlue"
+                MouseOverBackground="#df0917"
+                Command="{Binding DataContext.WindowCloseCommand, ElementName=TitleBarPanel}"
+                Width="20">
+                <Path   RenderOptions.EdgeMode="Aliased" StrokeThickness="2"  Style="{StaticResource ButtonIcon}">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint="-0.5,-0.5" EndPoint="8,8"/>
+                            <LineGeometry StartPoint="-0.5,8" EndPoint="8,0"/>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </el:Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -2,8 +2,48 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Kukushka.Talk"
-             StartupUri="Views/Messanger.xaml">
+             StartupUri="Views/Main/Messenger.xaml"
+             xmlns:el="clr-namespace:Kukushka.Talk.Views.Elements"
+             >
     <Application.Resources>
-         
+        <DrawingImage x:Key="Logo">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V1451.34 H1451.34 V0 H0 Z">
+                    <DrawingGroup.Transform>
+                        <TranslateTransform X="349.27999877929687" Y="341.97000122070312" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFDF0917" Geometry="F1 M1451.34,1451.34z M0,0z M1109.55,388.75C1115.72,411.97 1123.58,446.92 1127.61,489.92 1130.55,521.25 1155.37,785.74 1014.18,876.08 988.07,892.79 947.46,910.85 905.31,917.59 854.23,925.76 813.54,930.24 785.19,932.83 753.1,935.77 747.01,937.34 735.65,939.45 693.91,947.19 661.27,959.6 640.14,968.92 614.89,976.98 522.44,1054.3 496.04,1093.78 496.04,1093.78 496.04,1093.78 496.04,1093.78 496.04,1093.78 413.12,1197.43 387.82,1220.77 383.83,1224.45 379.37,1227.18 379.37,1227.18 375.54,1229.53 371.94,1231.07 368.98,1232.11 348.24,1235.92 334.87,1233.98 328.89,1226.3 308.9,1200.62 371.32,1110.77 516.18,956.73 513.93,952.67 327.28,1107.49 286.55,1031.91 285.99,1019.78 310.06,1009.85 308.9,1007.52 209.75,1040.5 349.38,975.57 421.68,890.67 559.71,714.05 564.54,615.31 679.78,469.53 761.26,375.91 880.22,216.13 1015.05,252.58 1089.72,291.99 1039.27,348.55 1117.17,339.98 1154.07,338.24 1170.71,326.46 1182.71,348.1 1182.51,362.37 1121.4,360.34 1109.55,388.75z" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M1060.78,594.5" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M871.79,617.36" />
+                    <GeometryDrawing Brush="#FFE30613" Geometry="F1 M1451.34,1451.34z M0,0z M875.86,955.2" />
+                    <GeometryDrawing Brush="#FFE30613" Geometry="F1 M1451.34,1451.34z M0,0z M781.36,1106.08" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M900.67,732.16C900.67,732.15 953.1,700.82 953.1,700.82 951.91,690.19 953.1,681.42 955.82,673.81 971.14,630.8 1034.92,624.68 991.23,528.9 715.31,370.7 545.44,530.44 437.81,823.2 306.28,947.16 167.2,1047.91 258.78,1025.04 260.54,1028.9 231.97,1040.38 233.37,1050.86 294.68,1158.41 906.99,724.56 900.67,732.16z" />
+                    <GeometryDrawing Brush="#FFF6F6F6" Geometry="F1 M1451.34,1451.34z M0,0z M911.51,739.71" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M1188.46,595.69" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M618.11,915.17C617.49,915.7 616.62,916.64 616.23,918.06 615.05,922.42 619.51,927.69 620.59,929.07 624.19,933.63 629.13,943.91 634.55,969.56 636.19,969.34 653.01,966.91 654.89,957.1 655.59,953.47 653.85,950.83 646.96,939.64 632.1,915.49 628.62,909.04 623.89,909.9 622.43,910.16 620.33,911.22 618.11,915.17z" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M560.41,948.8C559.72,949.33 558.74,950.25 558.31,951.65 556.99,955.95 561.97,961.15 563.18,962.51 567.21,967.01 572.72,977.15 578.79,1002.45 580.62,1002.24 599.43,999.84 601.53,990.16 602.31,986.58 600.37,983.98 592.67,972.93 576.05,949.11 572.17,942.74 566.88,943.59 565.24,943.85 562.9,944.9 560.41,948.8z" />
+                    <GeometryDrawing Brush="#FFDF0917" Geometry="F1 M1451.34,1451.34z M0,0z M1439.02,2148.72" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M669.92,884.6C669.2,885.24 668.17,886.37 667.72,888.08 666.33,893.33 671.56,899.7 672.83,901.35 677.05,906.85 682.84,919.24 689.2,950.17 691.12,949.91 710.84,946.98 713.04,935.15 713.86,930.77 711.83,927.59 703.75,914.09 686.33,884.97 682.25,877.19 676.71,878.23 674.99,878.56 672.53,879.85 669.92,884.6z" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M-349.28,-332.15" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M300.16,256.2" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M-264.29,-331.36" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M341.81,-341.97" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M216.03,-326.76" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M426.79,-341.19" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M597.36,-334.57" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M471.58,-319.35" />
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M1451.34,1451.34z M0,0z M682.34,-333.78" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <Style TargetType="{x:Type Shape}" x:Key="ButtonIcon">
+            <Setter Property="Shape.Stroke" Value="{Binding ButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}" Value="True">
+                    <Setter Property="Stroke" Value="{Binding MouseOverButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

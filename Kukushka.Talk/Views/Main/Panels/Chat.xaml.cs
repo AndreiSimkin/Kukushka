@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kukushka.Talk.Views.Elements
+namespace Kukushka.Talk.Views.Main.Panles
 {
     /// <summary>
-    /// Логика взаимодействия для Topbar.xaml
+    /// Логика взаимодействия для Chat.xaml
     /// </summary>
-    public partial class Topbar : UserControl
+    public partial class Chat : UserControl
     {
-        public Topbar()
+        public Chat()
         {
             InitializeComponent();
         }
