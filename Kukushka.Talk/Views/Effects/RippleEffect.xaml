@@ -59,14 +59,14 @@
     <Grid IsHitTestVisible="False" ClipToBounds="True">
         <Canvas IsHitTestVisible="False">
             <Ellipse x:Name="ellipse1"
-                Fill="#05FFFFFF" 
+                Fill="#07FFFFFF" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" IsHitTestVisible="False" 
                 Width="0" 
                 Height="{Binding Path=Width, RelativeSource={RelativeSource Self}}"
             >
             </Ellipse>
             <Ellipse x:Name="ellipse2"
-                Fill="#05FFFFFF" 
+                Fill="#07FFFFFF" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" IsHitTestVisible="False" 
                 Width="0" 
                 Height="{Binding Path=Width, RelativeSource={RelativeSource Self}}" 

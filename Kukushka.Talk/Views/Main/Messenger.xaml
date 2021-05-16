@@ -15,7 +15,9 @@
         Background="#292929"
         MinWidth="300"
         MinHeight="500"
-        Width="1280" >
+        Width="1280"
+        MouseDown="MessengerWindow_MouseDown"
+        >
     <Window.DataContext>
         <vm:MessengerViewModel />
     </Window.DataContext>
@@ -28,7 +30,7 @@
             
                        />
     </WindowChrome.WindowChrome>
-    <Grid x:Name="Surface">
+    <Grid x:Name="Surface" >
         <Grid.Style>
             <Style TargetType="Grid">
                 <Setter Property="Margin" Value="0"/>
@@ -46,25 +48,35 @@
         <pn:TitleBar x:Name="TitleBarElement" Text="{Binding Title, ElementName=MessengerWindow}" Grid.Row="0" />
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition MinWidth="300" Width="3*"/>
+                <ColumnDefinition  MinWidth="300" Width="3*"/>
                 <ColumnDefinition Width="1"/>
                 <ColumnDefinition Width="4*">
                     <ColumnDefinition.Style>
                         <Style TargetType="ColumnDefinition">
-                            <Setter Property="MinWidth" Value="400"/>
-                            <Setter Property="MaxWidth" Value="65536"/>
+                            <Setter Property="MinWidth" Value="300"/>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding ActualWidth, ElementName=MessengerWindow, Converter={op:LessThan 640}}" Value="True">
+                                <DataTrigger Binding="{Binding ActualWidth, ElementName=MessengerWindow, Converter={op:LessThan 700}}" Value="True">
                                     <Setter Property="MinWidth" Value="0"/>
-                                    <Setter Property="MaxWidth" Value="0"/>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </ColumnDefinition.Style>
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <pn:Users Grid.ColumnSpan="2" Grid.Column="0"/>
-            <GridSplitter Focusable="False" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="Transparent" Margin="-1,0,0,0" />
+            <Grid Panel.ZIndex="1">
+                <pn:Users Grid.Column="0"/>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Grid.ColumnSpan" Value="2"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ActualWidth, ElementName=MessengerWindow, Converter={op:LessThan 700}}" Value="True">
+                                <Setter Property="Grid.ColumnSpan" Value="3"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+            </Grid>
+            <GridSplitter Panel.ZIndex="1" Focusable="False" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="Transparent" Margin="-1,0,0,0" />
             <pn:Chat MinWidth="400" Grid.Column="2"/>
         </Grid>
     </Grid>

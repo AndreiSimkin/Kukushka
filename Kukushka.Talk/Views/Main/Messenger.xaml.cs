@@ -25,5 +25,21 @@ namespace Kukushka.Talk.Views.Main
         {
             InitializeComponent();
         }
+
+        private void MessengerWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Keyboard.FocusedElement != null)
+            {
+                var textBox = (FrameworkElement)Keyboard.FocusedElement;
+                FrameworkElement parent = (FrameworkElement)textBox.Parent;
+                while (parent != null && parent is IInputElement && !((IInputElement)parent).Focusable)
+                {
+                    parent = (FrameworkElement)parent.Parent;
+                }
+
+                DependencyObject scope = FocusManager.GetFocusScope(textBox);
+                FocusManager.SetFocusedElement(scope, parent as IInputElement);
+            }
+        }
     }
 }
