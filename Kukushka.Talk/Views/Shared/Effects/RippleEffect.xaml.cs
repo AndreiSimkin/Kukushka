@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kukushka.Talk.Views.Effects
+namespace Kukushka.Talk.Views.Shared.Effects
 {
     /// <summary>
     /// Логика взаимодействия для RippleEffect.xaml

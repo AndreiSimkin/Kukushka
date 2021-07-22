@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Kukushka.Talk.Views.Elements
+namespace Kukushka.Talk.Views.Shared.Elements
 {
     /// <summary>
     /// Логика взаимодействия для Button.xaml

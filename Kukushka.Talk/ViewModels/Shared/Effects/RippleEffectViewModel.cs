@@ -5,11 +5,11 @@ using System.Text;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Input;
-using Kukushka.Talk.Models.Effects;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
+using Kukushka.Talk.Models.Shared.Effects;
 
-namespace Kukushka.Talk.ViewModels.Effects
+namespace Kukushka.Talk.ViewModels.Shared.Effects
 {
     [POCOViewModel]
     public class RippleEffectViewModel : ViewModelBase
@@ -28,8 +28,8 @@ namespace Kukushka.Talk.ViewModels.Effects
             Model.PropertyChanged += (s, e) => { RaisePropertyChanged(e.PropertyName); };
         }
 
-        public ICommand ActivateCommand => new DelegateCommand<object>((object args) => Model.Activate(args));
-        public ICommand DeactivateCommand => new DelegateCommand<object>((object args) => Model.Decativate(args));
-        public ICommand InitializeCommand => new DelegateCommand<object>((object args) => Model.Initialize(args));
-    }   
+        public ICommand ActivateCommand => new DelegateCommand<object>((args) => Model.Activate(args));
+        public ICommand DeactivateCommand => new DelegateCommand<object>((args) => Model.Decativate(args));
+        public ICommand InitializeCommand => new DelegateCommand<object>((args) => Model.Initialize(args));
+    }
 }

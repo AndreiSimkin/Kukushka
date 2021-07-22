@@ -1,5 +1,5 @@
 ﻿using DevExpress.Mvvm;
-using Kukushka.Talk.Models.Panels;
+using Kukushka.Talk.Models.Shared.Panels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Kukushka.Talk.ViewModels.Main.Panels
+namespace Kukushka.Talk.ViewModels.Shared.Panels
 {
     public class TitleBarViewModel : ViewModelBase
     {

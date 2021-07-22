@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Kukushka.Talk.Views.Main.Panles" xmlns:el="clr-namespace:Kukushka.Talk.Views.Elements"
+             xmlns:local="clr-namespace:Kukushka.Talk.Views.Main.Panles"
+             xmlns:sharedelements="clr-namespace:Kukushka.Talk.Views.Shared.Elements"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#242424"
              xmlns:vm="clr-namespace:Kukushka.Talk.ViewModels.Main.Panels"
@@ -12,8 +13,8 @@
         <vm:ChatViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <el:Button Command="{Binding TestClickCommand}" Foreground="AliceBlue" MouseOverBackground="#11FFFFFF" Cursor="Hand">
+        <sharedelements:Button Command="{Binding TestClickCommand}" Foreground="AliceBlue" MouseOverBackground="#11FFFFFF" Cursor="Hand">
             Hui
-        </el:Button>
+        </sharedelements:Button>
     </Grid>
 </UserControl>

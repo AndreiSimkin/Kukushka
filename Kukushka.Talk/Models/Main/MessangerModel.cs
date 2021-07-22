@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Kukushka.Talk.Models
+namespace Kukushka.Talk.Models.Main
 {
     public class MessangerModel : BindableBase
     {

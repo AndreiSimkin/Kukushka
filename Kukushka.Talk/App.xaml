@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Kukushka.Talk"
              StartupUri="Views/Main/Messenger.xaml"
-             xmlns:el="clr-namespace:Kukushka.Talk.Views.Elements"
+             xmlns:sharedelements="clr-namespace:Kukushka.Talk.Views.Shared.Elements"
              >
     <Application.Resources>
         <DrawingImage x:Key="Logo">
@@ -37,11 +37,11 @@
             </DrawingImage.Drawing>
         </DrawingImage>
         <Style TargetType="{x:Type Shape}" x:Key="ButtonIcon">
-            <Setter Property="Shape.Stroke" Value="{Binding ButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}"/>
+            <Setter Property="Shape.Stroke" Value="{Binding ButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type sharedelements:Button }}}"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}" Value="True">
-                    <Setter Property="Stroke" Value="{Binding MouseOverButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type el:Button }}}"/>
+                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type sharedelements:Button }}}" Value="True">
+                    <Setter Property="Stroke" Value="{Binding MouseOverButtonIconStroke, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type sharedelements:Button }}}"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>

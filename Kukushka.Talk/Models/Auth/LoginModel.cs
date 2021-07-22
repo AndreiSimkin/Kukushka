@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Kukushka.Talk.Models.Panels
+namespace Kukushka.Talk.Models.Auth
 {
-    public class TitleBarModel : BindableBase
+    public class LoginModel : BindableBase
     {
         public void TougleWindowState(WindowState state)
         {
@@ -17,11 +17,6 @@ namespace Kukushka.Talk.Models.Panels
             else
                 WindowState = state;
             RaisePropertiesChanged("WindowState");
-        }
-
-        public void CloseWindow()
-        {
-            Application.Current.Shutdown();
         }
 
         public WindowState WindowState { get; set; }

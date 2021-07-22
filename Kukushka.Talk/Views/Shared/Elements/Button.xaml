@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="Kukushka.Talk.Views.Elements.Button"
+﻿<UserControl x:Class="Kukushka.Talk.Views.Shared.Elements.Button"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:local="clr-namespace:Kukushka.Talk.Views.Elements"
+             xmlns:local="clr-namespace:Kukushka.Talk.Views.Shared.Elements"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ef="clr-namespace:Kukushka.Talk.Views.Effects"
+             xmlns:sharedeffects="clr-namespace:Kukushka.Talk.Views.Shared.Effects"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              x:Name="ButtonElement"
@@ -29,9 +29,9 @@
                         </Style>
                     </Grid.Style>
                     <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" Cursor="Hand" />
-                    <ef:RippleEffect  RoundMaskColor="{Binding ElementName=ButtonElement, Path=RoundMaskColor}">
-                        <ef:RippleEffect.Style>
-                            <Style TargetType="ef:RippleEffect">
+                    <sharedeffects:RippleEffect  RoundMaskColor="{Binding ElementName=ButtonElement, Path=RoundMaskColor}">
+                        <sharedeffects:RippleEffect.Style>
+                            <Style TargetType="sharedeffects:RippleEffect">
                                 <Setter Property="Visibility" Value="Visible"/>
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding EnableRippleEffect, ElementName=ButtonElement}" Value="False">
@@ -39,8 +39,8 @@
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
-                        </ef:RippleEffect.Style>
-                    </ef:RippleEffect>
+                        </sharedeffects:RippleEffect.Style>
+                    </sharedeffects:RippleEffect>
                 </Grid>
             </Grid>
         </ControlTemplate>

@@ -6,7 +6,7 @@ using System.Windows.Input;
 using DevExpress.Mvvm;
 using Kukushka.Talk.Views;
 
-namespace Kukushka.Talk.Models.Effects
+namespace Kukushka.Talk.Models.Shared.Effects
 {
     public class RippleEffectModel : BindableBase
     {
