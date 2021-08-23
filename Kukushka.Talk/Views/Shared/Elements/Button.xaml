@@ -16,33 +16,35 @@
     </i:Interaction.Triggers>
     <UserControl.Template>
         <ControlTemplate TargetType="local:Button">
-            <Grid Background="{Binding Background, ElementName=ButtonElement}">
+            <local:ClippingBorder Background="{Binding Background, ElementName=ButtonElement}" CornerRadius="{Binding CornerRadius, ElementName=ButtonElement}">
                 <Grid>
-                    <Grid.Style>
-                        <Style TargetType="Grid">
-                            <Setter Property="Background" Value="Transparent"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=ButtonElement}" Value="True">
-                                    <Setter Property="Background" Value="{Binding MouseOverBackground, ElementName=ButtonElement}"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Grid.Style>
-                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" Cursor="Hand" />
-                    <sharedeffects:RippleEffect  RoundMaskColor="{Binding ElementName=ButtonElement, Path=RoundMaskColor}">
-                        <sharedeffects:RippleEffect.Style>
-                            <Style TargetType="sharedeffects:RippleEffect">
-                                <Setter Property="Visibility" Value="Visible"/>
+                    <Grid>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Background" Value="Transparent"/>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding EnableRippleEffect, ElementName=ButtonElement}" Value="False">
-                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    <DataTrigger Binding="{Binding IsMouseOver, ElementName=ButtonElement}" Value="True">
+                                        <Setter Property="Background" Value="{Binding MouseOverBackground, ElementName=ButtonElement}"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
-                        </sharedeffects:RippleEffect.Style>
-                    </sharedeffects:RippleEffect>
+                        </Grid.Style>
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" Cursor="Hand" />
+                        <sharedeffects:RippleEffect>
+                            <sharedeffects:RippleEffect.Style>
+                                <Style TargetType="sharedeffects:RippleEffect">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding EnableRippleEffect, ElementName=ButtonElement}" Value="False">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </sharedeffects:RippleEffect.Style>
+                        </sharedeffects:RippleEffect>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </local:ClippingBorder>
         </ControlTemplate>
     </UserControl.Template>
 

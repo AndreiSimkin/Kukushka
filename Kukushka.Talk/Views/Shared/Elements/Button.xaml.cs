@@ -22,15 +22,6 @@ namespace Kukushka.Talk.Views.Shared.Elements
         {
             InitializeComponent();
         }
-        public static readonly DependencyProperty RoundMaskColorProperty =
-DependencyProperty.Register(
-"RoundMaskColor", typeof(Brush), typeof(Button), new PropertyMetadata(Brushes.Transparent));
-
-        public Brush RoundMaskColor
-        {
-            get { return (Brush)GetValue(RoundMaskColorProperty); }
-            set { SetValue(RoundMaskColorProperty, value); }
-        }
 
         public static readonly DependencyProperty CommandProperty =
                 DependencyProperty.Register(
@@ -71,6 +62,20 @@ DependencyProperty.Register(
             get { return (bool)GetValue(EnableRippleEffectProperty); }
             set { SetValue(EnableRippleEffectProperty, value); }
         }
+
+
+
+        public int CornerRadius
+        {
+            get { return (int)GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register("CornerRadius", typeof(int), typeof(Button), new PropertyMetadata(0));
+
+
 
 
 

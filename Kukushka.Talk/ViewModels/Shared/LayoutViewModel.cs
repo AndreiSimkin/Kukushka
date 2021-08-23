@@ -1,5 +1,6 @@
 ﻿using DevExpress.Mvvm;
-using Kukushka.Talk.Models.Auth;
+using DevExpress.Mvvm.POCO;
+using Kukushka.Talk.Models.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,16 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
-namespace Kukushka.Talk.ViewModels.Auth
+namespace Kukushka.Talk.ViewModels.Shared
 {
-    public class LoginViewModel : ViewModelBase
+    public class LayoutViewModel : ViewModelBase
     {
-        private readonly LoginModel _model;
+        private readonly LayoutModel _model;
 
-        public LoginViewModel()
+        public LayoutViewModel()
         {
-            _model = new LoginModel();
+            _model = new LayoutModel();
 
             _model.PropertyChanged += (s, e) => RaisePropertiesChanged(e.PropertyName);
         }

@@ -22,8 +22,13 @@ namespace Kukushka.Talk.ViewModels.Main.Panels
     {
         public ChatViewModel()
         {
-
+            TestClickCommand = new DelegateCommand(async () =>
+            {
+             //   var test = await Network.Client.Connection.GetStunAdress();
+            });
         }
+
+        public ICommand TestClickCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

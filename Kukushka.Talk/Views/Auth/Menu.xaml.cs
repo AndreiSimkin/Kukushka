@@ -19,14 +19,14 @@ namespace Kukushka.Talk.Views.Auth
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Menu : Page
     {
-        public Login()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void LoginWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MenuPage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (Keyboard.FocusedElement != null)
             {

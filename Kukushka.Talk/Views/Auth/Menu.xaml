@@ -1,0 +1,36 @@
+﻿<Page x:Class="Kukushka.Talk.Views.Auth.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kukushka.Talk.Views.Auth"
+        mc:Ignorable="d"
+        xmlns:sharedpanels="clr-namespace:Kukushka.Talk.Views.Shared.Panels"
+        xmlns:vm="clr-namespace:Kukushka.Talk.ViewModels.Auth" xmlns:el="clr-namespace:Kukushka.Talk.Views.Shared.Elements"
+        Title="Kukushka Talk" 
+        x:Name="MenuPage"
+        Background="#242424"
+        d:DesignWidth="1280"
+        d:DesignHeight="720"
+        MouseDown="MenuPage_MouseDown"
+        >
+    <Page.DataContext>
+        <vm:MenuViewModel/>
+    </Page.DataContext>
+    <Grid x:Name="Surface" >
+        <Grid Width="72" Height="72" VerticalAlignment="Top" Margin="37">
+            <Ellipse Fill="#272727" Stroke="#DF0917" StrokeThickness="1"/>
+            <Image Margin="9" Source="{StaticResource Logo}"/>
+        </Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <el:Button Command="{Binding TestCommand}" Margin="5"  CornerRadius="4" Background="#2D2D2D" >
+                    <Label Margin="27,2.5" FontSize="13" Opacity="0.9" FontFamily="{StaticResource BellotaText}" Content="Зарегистрироваться" Foreground="#C2C2C2"/>
+                </el:Button>
+                <el:Button Margin="5" CornerRadius="4" Background="#2D2D2D" >
+                    <Label Margin="27,2.5" FontSize="13" Opacity="0.9" FontFamily="{StaticResource BellotaText}" Content="Войти" Foreground="#C2C2C2"/>
+                </el:Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

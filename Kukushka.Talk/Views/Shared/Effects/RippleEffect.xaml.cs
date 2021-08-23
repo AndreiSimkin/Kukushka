@@ -23,15 +23,5 @@ namespace Kukushka.Talk.Views.Shared.Effects
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty RoundMaskColorProperty =
-  DependencyProperty.Register(
-    "RoundMaskColor", typeof(Brush), typeof(RippleEffect), new PropertyMetadata(Brushes.Transparent));
-
-        public Brush RoundMaskColor
-        {
-            get { return (Brush)GetValue(RoundMaskColorProperty); }
-            set { SetValue(RoundMaskColorProperty, value); }
-        }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿<Window x:Class="Kukushka.Talk.Views.Main.Messenger"
+﻿<Page x:Class="Kukushka.Talk.Views.Main.Messenger"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,44 +9,17 @@
         xmlns:pn="clr-namespace:Kukushka.Talk.Views.Main.Panles"
         xmlns:vm="clr-namespace:Kukushka.Talk.ViewModels.Main"
         xmlns:op="clr-namespace:Kukushka.Talk.Converters.Operations"
-        Title="Kukushka Talk" 
-        Height="720" 
+        Title="Kukushka Talk"  
         x:Name="MessengerWindow"
-        WindowState="{Binding DataContext.WindowState, ElementName=TitleBarElement}"
         Background="#292929"
-        MinWidth="300"
-        MinHeight="500"
-        Width="1280"
-        MouseDown="MessengerWindow_MouseDown"
+        d:DesignWidth="1280"
+        d:DesignHeight="720"
+        MouseDown="MessengerPage_MouseDown"
         >
-    <Window.DataContext>
-        <vm:MessengerViewModel />
-    </Window.DataContext>
-    <WindowChrome.WindowChrome>
-        <WindowChrome 
-            CaptionHeight="20"
-            GlassFrameThickness="1,0,0,0"
-            CornerRadius="0"
-            ResizeBorderThickness="5"
-            
-                       />
-    </WindowChrome.WindowChrome>
+    <Page.DataContext>
+        <vm:MessengerViewModel/>
+    </Page.DataContext>
     <Grid x:Name="Surface" >
-        <Grid.Style>
-            <Style TargetType="Grid">
-                <Setter Property="Margin" Value="0"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding WindowState, ElementName=MessengerWindow}" Value="2">
-                        <Setter Property="Margin" Value="8"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Style>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <sharedpanels:TitleBar x:Name="TitleBarElement" Text="{Binding Title, ElementName=MessengerWindow}" Grid.Row="0" />
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  MinWidth="300" Width="3*"/>
@@ -81,4 +54,4 @@
             <pn:Chat Grid.Column="2"/>
         </Grid>
     </Grid>
-</Window>
+</Page>

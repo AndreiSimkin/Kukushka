@@ -19,14 +19,14 @@ namespace Kukushka.Talk.Views.Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Messenger : Window
+    public partial class Messenger : Page
     {
         public Messenger()
         {
             InitializeComponent();
         }
 
-        private void MessengerWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MessengerPage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (Keyboard.FocusedElement != null)
             {

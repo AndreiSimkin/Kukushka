@@ -71,7 +71,6 @@
                 Width="0" 
                 Height="{Binding Path=Width, RelativeSource={RelativeSource Self}}" 
                 />
-            <Ellipse Margin="-10" Fill="Transparent"  StrokeThickness="10" Width="{Binding RoundMaskSize.Width}" Height="{Binding RoundMaskSize.Height}" Stroke="{Binding ElementName=RippleEffectElement, Path=RoundMaskColor}" IsHitTestVisible="False"/>
         </Canvas>
     </Grid>
 </UserControl>

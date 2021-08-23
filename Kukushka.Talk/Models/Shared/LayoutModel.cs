@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Kukushka.Talk.Models.Auth
+namespace Kukushka.Talk.Models.Shared
 {
-    public class LoginModel : BindableBase
+    public class LayoutModel : BindableBase
     {
         public void TougleWindowState(WindowState state)
         {
