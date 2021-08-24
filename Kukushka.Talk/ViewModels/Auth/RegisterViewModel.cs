@@ -12,28 +12,21 @@ using System.Windows.Input;
 
 namespace Kukushka.Talk.ViewModels.Auth
 {
-    public class MenuViewModel : ViewModelBase
+    public class RegisterViewModel : ViewModelBase
     {
-        private readonly MenuModel _model;
+        private readonly RegisterModel _model;
 
-        public MenuViewModel()
+        public RegisterViewModel()
         {
-            _model = new MenuModel();
+            _model = new RegisterModel();
 
             _model.PropertyChanged += (s, e) => RaisePropertiesChanged(e.PropertyName);
 
-            LoginCommand = new DelegateCommand(() =>
-            {
-                Views.Shared.Layout.NavigationService.Navigate(new Views.Auth.Login());
-            });
-
-            RegisterCommand = new DelegateCommand(() =>
-            {
-                Views.Shared.Layout.NavigationService.Navigate(new Views.Auth.Register());
+            RegisterCommand = new DelegateCommand(() => {
+                Views.Shared.Layout.NavigationService.Navigate(new Views.Main.Messenger());
             });
         }
 
-        public ICommand LoginCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -19,9 +19,9 @@ namespace Kukushka.Talk.Views.Auth
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Menu : Page
+    public partial class Login : Page
     {
-        public Menu()
+        public Login()
         {
             InitializeComponent();
         }

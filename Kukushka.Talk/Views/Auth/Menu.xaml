@@ -12,7 +12,6 @@
         Background="#242424"
         d:DesignWidth="1280"
         d:DesignHeight="720"
-        MouseDown="MenuPage_MouseDown"
         >
     <Page.DataContext>
         <vm:MenuViewModel/>
@@ -24,10 +23,10 @@
         </Grid>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel>
-                <el:Button Command="{Binding TestCommand}" Margin="5"  CornerRadius="4" Background="#2D2D2D" >
+                <el:Button Command="{Binding RegisterCommand}" Margin="5"  CornerRadius="4" Background="#2D2D2D" >
                     <Label Margin="27,2.5" FontSize="13" Opacity="0.9" FontFamily="{StaticResource BellotaText}" Content="Зарегистрироваться" Foreground="#C2C2C2"/>
                 </el:Button>
-                <el:Button Margin="5" CornerRadius="4" Background="#2D2D2D" >
+                <el:Button Command="{Binding LoginCommand}" Margin="5" CornerRadius="4" Background="#2D2D2D" >
                     <Label Margin="27,2.5" FontSize="13" Opacity="0.9" FontFamily="{StaticResource BellotaText}" Content="Войти" Foreground="#C2C2C2"/>
                 </el:Button>
             </StackPanel>

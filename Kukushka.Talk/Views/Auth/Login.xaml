@@ -1,0 +1,90 @@
+﻿<Page x:Class="Kukushka.Talk.Views.Auth.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kukushka.Talk.Views.Auth"
+        mc:Ignorable="d"
+        xmlns:sharedpanels="clr-namespace:Kukushka.Talk.Views.Shared.Panels"
+        xmlns:helpers="clr-namespace:Kukushka.Talk.Helpers"
+        xmlns:vm="clr-namespace:Kukushka.Talk.ViewModels.Auth" xmlns:el="clr-namespace:Kukushka.Talk.Views.Shared.Elements"
+        Title="Kukushka Talk" 
+        x:Name="LoginPage"
+        Background="#242424"
+        d:DesignWidth="1280"
+        d:DesignHeight="720"
+        >
+    <Page.DataContext>
+        <vm:LoginViewModel/>
+    </Page.DataContext>
+    <Grid x:Name="Surface" >
+        <Grid Width="72" Height="72" VerticalAlignment="Top" Margin="37">
+            <Ellipse Fill="#272727" Stroke="#DF0917" StrokeThickness="1"/>
+            <Image Margin="9" Source="{StaticResource Logo}"/>
+        </Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Width="191">
+                <Grid Margin=" 5" Height="33">
+                    <TextBox x:Name="LoginEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <TextBlock IsHitTestVisible="False" Text="Логин" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6" FontFamily="Nirmala UI"  FontSize="13">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Setter Property="Foreground" Value="#909090"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=LoginEntry}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsFocused, ElementName=LoginEntry}" Value="True">
+                                        <Setter Property="Foreground" Value="#606060"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Grid>
+                <Grid Margin=" 5" Height="33">
+                    <PasswordBox helpers:PasswordHelper.Attach="True" helpers:PasswordHelper.Password="{Binding Text, ElementName=ShowPassEntry, Mode=TwoWay}"  x:Name="PassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                        <PasswordBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </PasswordBox.Resources>
+                    </PasswordBox>
+                    <TextBox Visibility="Collapsed" x:Name="ShowPassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <TextBlock IsHitTestVisible="False" Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6" FontFamily="Nirmala UI"  FontSize="13">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Setter Property="Foreground" Value="#909090"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=ShowPassEntry}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsFocused, ElementName=PassEntry}" Value="True">
+                                        <Setter Property="Foreground" Value="#606060"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Grid>
+                <el:Button Command="{Binding LoginCommand}" Margin="5" CornerRadius="4" Background="#2D2D2D" >
+                    <Label Margin="27,2.5" FontSize="13" Opacity="0.9" FontFamily="{StaticResource BellotaText}" Content="Войти" Foreground="#C2C2C2"/>
+                </el:Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
