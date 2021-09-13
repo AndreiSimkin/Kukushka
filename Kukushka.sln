@@ -5,9 +5,16 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kukushka.Talk", "Kukushka.Talk\Kukushka.Talk.csproj", "{B31746A9-4D76-40D9-9C4D-8AE75D97BF81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kukushka.Network", "Kukushka.Network\Kukushka.Network.csproj", "{328F4BDF-57E0-42A5-A94D-1E933C9CD4EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD679F04-9E82-4725-A376-47A8A824954D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kukushka.Tests", "Tests\Kukushka.Tests.csproj", "{6C6FB258-9338-4168-92F0-ECDC692A34FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kukushka.Network", "Kukushka.Network\Kukushka.Network.csproj", "{6F4B88DE-B0F9-4911-9472-2DD089737CB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kukushka.Tests", "Kukushka.Tests\Kukushka.Tests.csproj", "{6DFEBCA9-AA2D-4CE2-8E7C-62E785EC6E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kukushka.Models", "Kukushka.Models\Kukushka.Models.csproj", "{B14CA32A-AB9D-436E-BF36-A7DADAFC9F0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +26,18 @@ Global
 		{B31746A9-4D76-40D9-9C4D-8AE75D97BF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B31746A9-4D76-40D9-9C4D-8AE75D97BF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B31746A9-4D76-40D9-9C4D-8AE75D97BF81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{328F4BDF-57E0-42A5-A94D-1E933C9CD4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{328F4BDF-57E0-42A5-A94D-1E933C9CD4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{328F4BDF-57E0-42A5-A94D-1E933C9CD4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{328F4BDF-57E0-42A5-A94D-1E933C9CD4EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C6FB258-9338-4168-92F0-ECDC692A34FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C6FB258-9338-4168-92F0-ECDC692A34FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C6FB258-9338-4168-92F0-ECDC692A34FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C6FB258-9338-4168-92F0-ECDC692A34FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4B88DE-B0F9-4911-9472-2DD089737CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4B88DE-B0F9-4911-9472-2DD089737CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4B88DE-B0F9-4911-9472-2DD089737CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4B88DE-B0F9-4911-9472-2DD089737CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFEBCA9-AA2D-4CE2-8E7C-62E785EC6E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFEBCA9-AA2D-4CE2-8E7C-62E785EC6E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFEBCA9-AA2D-4CE2-8E7C-62E785EC6E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFEBCA9-AA2D-4CE2-8E7C-62E785EC6E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14CA32A-AB9D-436E-BF36-A7DADAFC9F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14CA32A-AB9D-436E-BF36-A7DADAFC9F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14CA32A-AB9D-436E-BF36-A7DADAFC9F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14CA32A-AB9D-436E-BF36-A7DADAFC9F0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

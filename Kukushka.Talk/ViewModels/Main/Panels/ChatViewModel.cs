@@ -5,6 +5,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Devices;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
+using Open.Nat;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,11 @@ namespace Kukushka.Talk.ViewModels.Main.Panels
         {
             TestClickCommand = new DelegateCommand(async () =>
             {
-             //   var test = await Network.Client.Connection.GetStunAdress();
+                var discoverer = new NatDiscoverer();
+                var cts = new CancellationTokenSource(10000);
+                var device = await discoverer.DiscoverDeviceAsync(PortMapper.Upnp, cts);
+
+                await device.CreatePortMapAsync(new Mapping(Protocol.Tcp, 1600, 1600, "Kukushka Port Forwarding"));
             });
         }
 

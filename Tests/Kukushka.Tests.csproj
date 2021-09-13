@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kukushka.Network\Kukushka.Network.csproj" />
+    <ProjectReference Include="..\Kukushka.Talk\Kukushka.Talk.csproj" />
   </ItemGroup>
 
 </Project>

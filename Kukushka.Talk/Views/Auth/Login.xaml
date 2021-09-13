@@ -25,14 +25,14 @@
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Width="191">
                 <Grid Margin=" 5" Height="33">
-                    <TextBox x:Name="LoginEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                    <TextBox x:Name="LoginEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="{StaticResource BellotaText}"  FontSize="13" >
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
-                    <TextBlock IsHitTestVisible="False" Text="Логин" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6" FontFamily="Nirmala UI"  FontSize="13">
+                    <TextBlock FontFamily="{StaticResource BellotaText}" IsHitTestVisible="False" Text="Никнейм" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6"  FontSize="13">
                         <TextBlock.Style>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="Visibility" Value="Collapsed"/>
@@ -50,21 +50,21 @@
                     </TextBlock>
                 </Grid>
                 <Grid Margin=" 5" Height="33">
-                    <PasswordBox helpers:PasswordHelper.Attach="True" helpers:PasswordHelper.Password="{Binding Text, ElementName=ShowPassEntry, Mode=TwoWay}"  x:Name="PassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                    <PasswordBox helpers:PasswordHelper.Attach="True" helpers:PasswordHelper.Password="{Binding Text, ElementName=ShowPassEntry, Mode=TwoWay}"  x:Name="PassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="{StaticResource BellotaText}"  FontSize="13" >
                         <PasswordBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>
                             </Style>
                         </PasswordBox.Resources>
                     </PasswordBox>
-                    <TextBox Visibility="Collapsed" x:Name="ShowPassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="Nirmala UI"  FontSize="13" >
+                    <TextBox  Visibility="Collapsed" x:Name="ShowPassEntry" Background="#181818" Foreground="WhiteSmoke" BorderBrush="#3d444b" BorderThickness="0" Padding="8" FontFamily="{StaticResource BellotaText}"  FontSize="13" >
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
-                    <TextBlock IsHitTestVisible="False" Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6" FontFamily="Nirmala UI"  FontSize="13">
+                    <TextBlock IsHitTestVisible="False" Text="Пароль" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6, 10, 10, 10" Padding="6" FontFamily="{StaticResource BellotaText}"  FontSize="13">
                         <TextBlock.Style>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="Visibility" Value="Collapsed"/>
