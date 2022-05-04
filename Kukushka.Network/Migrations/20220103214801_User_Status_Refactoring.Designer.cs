@@ -3,14 +3,16 @@ using System;
 using Kukushka.Network.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Kukushka.Network.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220103214801_User_Status_Refactoring")]
+    partial class User_Status_Refactoring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,24 +20,19 @@ namespace Kukushka.Network.Migrations
 
             modelBuilder.Entity("Kukushka.Network.Data.Models.User", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<byte[]>("Id")
+                        .HasColumnType("BLOB");
 
                     b.Property<byte>("AcceptConnectionType")
                         .HasColumnType("INTEGER");
 
                     b.Property<byte[]>("ActivityTime")
-                        .IsRequired()
-                        .HasMaxLength(21)
                         .HasColumnType("BLOB");
 
                     b.Property<int>("FreeSpace")
                         .HasColumnType("INTEGER");
 
                     b.Property<byte[]>("IP")
-                        .IsRequired()
-                        .HasMaxLength(4)
                         .HasColumnType("BLOB");
 
                     b.Property<bool>("IsMobile")
@@ -44,13 +41,7 @@ namespace Kukushka.Network.Migrations
                     b.Property<bool>("IsOnline")
                         .HasColumnType("INTEGER");
 
-                    b.Property<byte[]>("NickHash")
-                        .IsRequired()
-                        .HasColumnType("BLOB");
-
                     b.Property<byte[]>("Port")
-                        .IsRequired()
-                        .HasMaxLength(2)
                         .HasColumnType("BLOB");
 
                     b.Property<byte[]>("RsaOpenKey")

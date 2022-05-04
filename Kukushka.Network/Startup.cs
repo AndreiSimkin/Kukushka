@@ -1,4 +1,7 @@
 using Kukushka.Network.Data;
+using Kukushka.Network.Data.Models;
+using Kukushka.Network.Servcies;
+using LiteDB;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,13 +31,17 @@ namespace Kukushka.Network
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDBContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
+            services.AddEntityFrameworkSqlite();
+            services.AddDbContext<AppDBContext>(options => options.UseSqlite(Configuration.GetConnectionString("SQLConnection")), ServiceLifetime.Transient);
             services.AddControllers();
             services.AddMediatR(typeof(Startup));
+            services.AddSingleton<ILiteDatabase>(_ => new LiteDatabase(Configuration.GetConnectionString("NoSQLConnection")));
+            services.AddSingleton<IDataStorageSerivce, DataStorageSerivce>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Kukushka.Network", Version = "v1" });
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +62,7 @@ namespace Kukushka.Network
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

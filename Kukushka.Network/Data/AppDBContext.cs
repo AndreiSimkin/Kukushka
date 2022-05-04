@@ -9,6 +9,7 @@ namespace Kukushka.Network.Data
 {
     public class AppDBContext : DbContext
     {
+        public string DbPath { get; }
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
 

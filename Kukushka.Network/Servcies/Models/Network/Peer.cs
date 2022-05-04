@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Kukushka.Network.Servcies.Models.TreeNetowrk
+namespace Kukushka.Network.Servcies.Models.Network
 {
     public class Peer
     {

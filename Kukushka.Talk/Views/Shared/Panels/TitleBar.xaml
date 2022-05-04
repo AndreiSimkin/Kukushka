@@ -13,7 +13,7 @@
     <UserControl.DataContext>
         <vm:TitleBarViewModel  />
     </UserControl.DataContext>
-    <Grid Background="#242424">
+    <Grid Background="#2D2D2D">
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
             <Image Visibility="Collapsed" Margin="-3" Source="{Binding Source={StaticResource Logo}}"/>
             <Label FontFamily="{StaticResource Comfortaa}" FontSize="14" Content="Kukushka Talk" Margin="-1,-2" Foreground="#df0917"/>

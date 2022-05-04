@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Handlers\" />
+    <Folder Include="Servcies\Models\DataStorage\" />
   </ItemGroup>
 
 </Project>

@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Kukushka.Network/Data/Kuksuhka_Main.db
+/Kukushka.Network/Data/Kukushka_Main.db
+/Kukushka.Network/Data/Kukushka_Data.db
+/Kukushka.Network/Data/Kukushka_Data-log.db

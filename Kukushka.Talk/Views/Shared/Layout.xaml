@@ -46,11 +46,14 @@
             <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <sharedpanels:TitleBar x:Name="TitleBarElement" Text="{Binding Title, ElementName=LayoutWindow}" Grid.Row="0" />
         <Frame  Navigating="PageFrame_Navigating" x:Name="PageFrame" MinHeight="0" MinWidth="0" Grid.Row="1" NavigationUIVisibility="Hidden">
             <Frame.Content>
                 <auth:Menu/>
             </Frame.Content>
         </Frame>
+        <Grid Grid.Row="1">
+            <Rectangle Fill="Red" Margin="0,200,0,0" Width="100" Height="100"/>
+        </Grid>
+        <sharedpanels:TitleBar x:Name="TitleBarElement" Text="{Binding Title, ElementName=LayoutWindow}" Grid.Row="0" />
     </Grid>
 </Window>
